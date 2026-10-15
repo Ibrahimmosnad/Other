@@ -1,0 +1,128 @@
+/* Fonts are local copies from @fontsource (served from node_modules). */
+@font-face { font-family: "Inter Tight"; font-weight: 400; src: url("/node_modules/@fontsource/inter-tight/files/inter-tight-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter Tight"; font-weight: 500; src: url("/node_modules/@fontsource/inter-tight/files/inter-tight-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter Tight"; font-weight: 600; src: url("/node_modules/@fontsource/inter-tight/files/inter-tight-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; src: url("/node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Jost"; font-weight: 300; src: url("/node_modules/@fontsource/jost/files/jost-latin-300-normal.woff2") format("woff2"); }
+@font-face { font-family: "Jost"; font-weight: 400; src: url("/node_modules/@fontsource/jost/files/jost-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Jost"; font-weight: 500; src: url("/node_modules/@fontsource/jost/files/jost-latin-500-normal.woff2") format("woff2"); }
+
+:root {
+  /* Designwave — taken from the studio's site (see README) */
+  --dw-cream: #efede8;
+  --dw-ink: #0f0f0f;
+  --dw-muted: #6b6862;
+  --dw-blue: #3b4bff;
+  --dw-sans: "Inter Tight", system-ui, sans-serif;
+  --dw-serif: "Instrument Serif", Georgia, serif;
+
+  /* FORM & OAK — the fictional demonstration brand */
+  --fo-paper: #f5f2ec;
+  --fo-stone: #d8d0c4;
+  --fo-oak: #b48a5e;
+  --fo-charcoal: #252525;
+  --fo-ash: #858585;
+  --fo-sans: "Jost", "Futura", sans-serif;
+}
+
+/* ---------- FORM & OAK components ---------- */
+.fo { font-family: var(--fo-sans); color: var(--fo-charcoal); -webkit-font-smoothing: antialiased; }
+.fo-label { font: 500 1em/1 var(--fo-sans); letter-spacing: .18em; text-transform: uppercase; }
+.fo-wordmark { display: inline-flex; align-items: center; gap: .62em; font: 500 1em/1 var(--fo-sans); letter-spacing: .24em; text-transform: uppercase; white-space: nowrap; }
+.fo-wordmark .amp { font-weight: 300; letter-spacing: .24em; }
+.fo-wordmark svg { width: 1.9em; height: 1.9em; flex: none; display: block; }
+.fo-mark { display: block; }
+
+/* Product tag: 9:16, the shape of the film's opening frame */
+.fo-tag { position: relative; width: 540px; height: 960px; background: var(--fo-paper); overflow: hidden; }
+.fo-tag .hole { position: absolute; left: 50%; top: 52px; width: 30px; height: 30px; margin-left: -15px; border-radius: 50%; background: #cfc6b8; box-shadow: inset 0 2px 3px rgba(0,0,0,.22); }
+.fo-tag .no { position: absolute; left: 48px; top: 140px; font-size: 20px; color: var(--fo-ash); }
+.fo-tag .name { position: absolute; left: 46px; top: 176px; font: 400 64px/1 var(--fo-sans); letter-spacing: -.01em; }
+.fo-tag .mark { position: absolute; left: 50%; top: 50%; width: 88px; height: 88px; margin: -44px 0 0 -44px; }
+.fo-tag .spec { position: absolute; left: 48px; right: 48px; top: 700px; font: 400 22px/1.55 var(--fo-sans); color: #4a4744; border-top: 1.5px solid var(--fo-charcoal); padding-top: 18px; }
+.fo-tag .spec span { color: var(--fo-ash); display: inline-block; width: 128px; }
+.fo-tag .foot { position: absolute; left: 48px; bottom: 48px; font-size: 17px; }
+
+/* Care kit sleeve (top face of the box, 200 x 140 mm) */
+.fo-sleeve { position: relative; width: 1000px; height: 700px; background: var(--fo-paper); overflow: hidden; }
+.fo-sleeve .band { position: absolute; left: 0; right: 0; top: 0; height: 100%; }
+.fo-sleeve .wm { position: absolute; left: 70px; top: 76px; font-size: 30px; }
+.fo-sleeve .rings { position: absolute; right: -2px; bottom: -2px; width: 430px; height: 430px; }
+.fo-sleeve .title { position: absolute; left: 70px; bottom: 150px; font: 400 66px/1.04 var(--fo-sans); letter-spacing: -.01em; }
+.fo-sleeve .sub { position: absolute; left: 72px; bottom: 82px; font-size: 22px; color: var(--fo-ash); }
+
+/* Poster, A-series 1:1.414 */
+.fo-poster { position: relative; width: 1000px; height: 1414px; background: var(--fo-paper); overflow: hidden; }
+.fo-poster .photo { position: absolute; left: 0; right: 0; top: 0; height: 930px; background-size: cover; background-position: 50% 62%; }
+.fo-poster .head { position: absolute; left: 72px; top: 1000px; font: 400 92px/1.02 var(--fo-sans); letter-spacing: -.015em; }
+.fo-poster .meta { position: absolute; left: 74px; bottom: 74px; font-size: 22px; color: var(--fo-ash); }
+.fo-poster .wm { position: absolute; right: 72px; bottom: 66px; font-size: 22px; }
+
+/* Instagram post, 4:5 */
+.fo-post { position: relative; width: 1080px; height: 1350px; overflow: hidden; background: var(--fo-paper); }
+.fo-post .photo { position: absolute; inset: 0; background-size: cover; background-position: 50% 55%; }
+.fo-post .wm { position: absolute; left: 72px; top: 72px; font-size: 26px; }
+.fo-post .cap { position: absolute; left: 72px; bottom: 72px; font-size: 24px; }
+.fo-post .cap b { display: block; font: 400 56px/1.05 var(--fo-sans); letter-spacing: -.01em; margin-top: 14px; text-transform: none; }
+.fo-post.type { background: var(--fo-oak); color: var(--fo-paper); }
+.fo-post.type .big { position: absolute; left: 72px; top: 330px; font: 400 128px/1.0 var(--fo-sans); letter-spacing: -.02em; }
+.fo-post.type .rings { position: absolute; right: -2px; bottom: -2px; width: 560px; height: 560px; }
+
+/* Websites */
+.fo-site { background: var(--fo-paper); overflow: hidden; position: relative; }
+.fo-site a { color: inherit; text-decoration: none; }
+.fo-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--fo-charcoal); color: var(--fo-paper); font: 500 15px/1 var(--fo-sans); letter-spacing: .04em; padding: 16px 22px; border-radius: 999px; }
+.fo-btn .arr { font-weight: 400; }
+.m-site { width: 390px; }
+.m-site .nav { height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; }
+.m-site .nav .fo-wordmark { font-size: 12px; }
+.m-site .burger { width: 22px; height: 10px; border-top: 1.6px solid var(--fo-charcoal); border-bottom: 1.6px solid var(--fo-charcoal); }
+.m-site .hero { height: 404px; margin: 0 14px; border-radius: 4px; background-size: cover; background-position: 50% 50%; }
+.m-site .intro { padding: 26px 22px 30px; }
+.m-site .intro .fo-label { font-size: 11px; color: var(--fo-ash); }
+.m-site h1 { font: 400 40px/1.04 var(--fo-sans); letter-spacing: -.015em; margin: 12px 0 14px; }
+.m-site .intro p { font: 400 16px/1.45 var(--fo-sans); color: #4a4744; margin: 0 0 22px; max-width: 30ch; }
+.m-site .sect { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 22px 14px; border-top: 1px solid #ddd5c9; margin: 0 22px; padding-left: 0; padding-right: 0; padding-top: 18px; }
+.m-site .sect h2 { font: 400 24px/1 var(--fo-sans); margin: 0; }
+.m-site .sect span { font: 500 11px/1 var(--fo-sans); letter-spacing: .16em; text-transform: uppercase; color: var(--fo-ash); }
+.m-site .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 4px 22px 30px; }
+.m-site .card .img { aspect-ratio: 4 / 5; background-size: cover; background-position: 50% 60%; border-radius: 3px; background-color: #e3dccf; }
+.m-site .card .t { font: 400 16px/1.2 var(--fo-sans); margin-top: 10px; }
+.m-site .card .p { font: 400 14px/1.2 var(--fo-sans); color: var(--fo-ash); margin-top: 4px; }
+
+.d-site { width: 1440px; height: 900px; }
+.d-site .nav { height: 84px; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; }
+.d-site .nav .fo-wordmark { font-size: 15px; }
+.d-site .links { display: flex; gap: 40px; font: 400 16px/1 var(--fo-sans); }
+.d-site .hero { display: grid; grid-template-columns: 1fr 1.18fr; height: 664px; margin: 0 56px; gap: 56px; }
+.d-site .copy { display: flex; flex-direction: column; justify-content: center; }
+.d-site .copy .fo-label { font-size: 12px; color: var(--fo-ash); }
+.d-site h1 { font: 400 84px/1.0 var(--fo-sans); letter-spacing: -.02em; margin: 18px 0 22px; }
+.d-site .copy p { font: 400 19px/1.5 var(--fo-sans); color: #4a4744; margin: 0 0 34px; max-width: 30ch; }
+.d-site .pic { background-size: cover; background-position: 50% 60%; border-radius: 4px; }
+.d-site .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 46px 56px 0; border-top: 1px solid #ddd5c9; padding-top: 22px; font: 400 18px/1 var(--fo-sans); }
+.d-site .row span { color: var(--fo-ash); margin-left: 10px; }
+
+/* ---------- Designwave ---------- */
+.dw-logo { display: inline-flex; align-items: center; gap: .36em; font: 600 1em/1 var(--dw-sans); letter-spacing: -.02em; color: var(--dw-ink); white-space: nowrap; }
+.dw-logo svg { width: 1.56em; height: 1.56em; display: block; flex: none; }
+
+/* Phone screen: the brand's feed, a social post in context */
+.feed { width: 390px; height: 845px; background: #fbfaf7; position: relative; overflow: hidden; }
+.feed .status { height: 54px; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; font: 600 15px/1 var(--dw-sans); color: #111; }
+.feed .status i { display: inline-block; width: 24px; height: 11px; border: 1.5px solid #111; border-radius: 3px; position: relative; }
+.feed .status i::after { content: ""; position: absolute; inset: 1.5px 5px 1.5px 1.5px; background: #111; border-radius: 1px; }
+.feed .head { display: flex; align-items: center; gap: 10px; padding: 10px 16px 12px; font: 500 14px/1 var(--fo-sans); }
+.feed .head .av { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; }
+.feed .head .av svg { width: 100%; height: 100%; }
+.feed .head .dots { margin-left: auto; letter-spacing: 2px; color: #555; }
+.feed .post { width: 390px; height: 487px; overflow: hidden; }
+.feed .post > .fo-post { transform: scale(.3611); transform-origin: 0 0; }
+.feed .acts { display: flex; gap: 18px; padding: 14px 16px 8px; }
+.feed .acts svg { width: 24px; height: 24px; fill: none; stroke: #111; stroke-width: 1.7; stroke-linejoin: round; stroke-linecap: round; }
+.feed .acts svg:last-child { margin-left: auto; }
+.feed .cap { padding: 0 16px; font: 400 14px/1.45 var(--fo-sans); color: #222; }
+.feed .cap b { font-weight: 500; }
+.feed .next { display: flex; align-items: center; gap: 10px; padding: 18px 16px 10px; font: 500 14px/1 var(--fo-sans); }
+.feed .next .av { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; }
+.feed .next-img { margin: 0; height: 120px; background-size: cover; background-position: 50% 40%; }

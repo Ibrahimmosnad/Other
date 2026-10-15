@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FORM &amp; OAK touchpoints</title>
+<link rel="stylesheet" href="/comp/brand/brand.css">
+<style>
+  body { margin: 0; background: #888; }
+  .sheet { display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; align-items: flex-start; }
+  [data-snap] { flex: none; }
+</style>
+</head>
+<body>
+<div class="sheet" id="sheet"></div>
+<script type="module">
+  import * as B from "/comp/brand/brand.js";
+  const items = {
+    tag: B.tag("t"),
+    sleeve: B.sleeve(),
+    poster: B.poster(),
+    post1: B.posts()[0],
+    post2: B.posts()[1],
+    post3: B.posts()[2],
+    site_mobile: B.siteMobile(),
+    site_desktop: B.siteDesktop(),
+    phone_feed: B.phoneFeed(),
+    site_mobile_screen: B.siteMobileScreen(),
+    fo_mark: `<div style="width:600px;height:600px">${B.foMark("#252525", "#f5f2ec", "big")}</div>`,
+  };
+  const sheet = document.getElementById("sheet");
+  for (const [key, html] of Object.entries(items)) {
+    const wrap = document.createElement("div");
+    wrap.dataset.snap = key;
+    wrap.innerHTML = html;
+    sheet.appendChild(wrap);
+  }
+  await document.fonts.ready;
+  await Promise.all([...document.images].map((i) => i.decode().catch(() => {})));
+  window.ready = true;
+</script>
+</body>
+</html>

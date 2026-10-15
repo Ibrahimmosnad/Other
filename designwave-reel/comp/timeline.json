@@ -1,0 +1,31 @@
+{
+  "_note": "Scene boundaries in seconds, set around the recorded narration (audio/build/vo_timeline.json). The film, the score and the sound effects all read this file.",
+  "duration": 30.0,
+  "fps": 30,
+  "scenes": {
+    "s1_hook": [0.0, 2.6],
+    "s2_product": [2.6, 4.8],
+    "s3_communication": [4.8, 6.55],
+    "s4_digital": [6.55, 9.95],
+    "s5_isolation": [9.95, 13.25],
+    "s6a_identity": [13.25, 20.4],
+    "s6b_digital": [20.4, 21.8],
+    "s6c_communication": [21.8, 23.75],
+    "s7_bigger_picture": [23.75, 26.9],
+    "s8_reveal": [26.9, 30.0]
+  },
+  "events": {
+    "paper": 4.86,
+    "tap": 8.82,
+    "align": 11.85,
+    "reveal": 26.92
+  },
+  "music": {
+    "bpm": 100,
+    "_chords": "chord changes on beats; 100 BPM puts them on the scene changes at 4.8, 13.2, 20.4, 24.0 and the end card at 27.0",
+    "chords": [
+      [0, "Dmaj9"], [8, "Bm11"], [16, "Gmaj9"], [22, "D/F#"],
+      [28, "Gmaj9"], [34, "Em9"], [40, "Asus4"], [45, "Dmaj9"]
+    ]
+  }
+}

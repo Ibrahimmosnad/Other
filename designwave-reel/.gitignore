@@ -1,0 +1,6 @@
+node_modules/
+out/frames/
+assets/renders/*.png
+audio/build/vo/*.wav
+__pycache__/
+*.pyc
