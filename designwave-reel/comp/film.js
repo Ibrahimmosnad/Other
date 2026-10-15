@@ -183,6 +183,8 @@ const type6 = node(`<div class="abs fo" style="left:84px;top:760px;width:900px">
   <div style="font:400 200px/1 var(--fo-sans);letter-spacing:-.02em;display:inline-block">Aa</div>
   <div style="position:absolute;left:290px;top:52px"><div style="font:500 34px/1 var(--fo-sans)">Jost</div>
   <div style="font:400 25px/1.4 var(--fo-sans);color:var(--fo-ash);margin-top:12px">Light · Regular · Medium</div></div></div>`, s6aBoard);
+const markAlt = node(`<div class="abs" style="left:676px;top:410px;width:320px;height:320px;background:var(--fo-oak);border-radius:4px">
+  <div style="position:absolute;left:100px;top:100px;width:120px;height:120px">${B.foMark("#f5f2ec", "#b48a5e", "alt")}</div></div>`, s6aBoard);
 const SW = [["Paper", "#F5F2EC", "#252525"], ["Stone", "#D8D0C4", "#252525"], ["Oak", "#B48A5E", "#F5F2EC"],
   ["Charcoal", "#252525", "#F5F2EC"], ["Ash", "#858585", "#F5F2EC"]];
 const swatches = SW.map(([n, hex, ink], i) => node(`<div class="swatch fo" style="left:${84 + i * 170}px;top:1080px;background:${hex};color:${ink};${n === "Paper" ? "box-shadow:inset 0 0 0 1.5px #d9d2c6" : ""}"><b>${n}</b>${hex}</div>`, s6aBoard));
@@ -468,6 +470,10 @@ function render(t) {
     }
     s4wrap.dataset.cam = JSON.stringify(cam);
 
+    // the photographed screen in the flat-lay is paler (glass, daylight);
+    // start the live display there and let it settle to full contrast
+    const sk = P(t, 6.95, 7.6, E.soft);
+    screen.style.filter = `contrast(${lerp(0.8, 0.97, sk)}) brightness(${lerp(1.07, 1.0, sk)}) saturate(${lerp(0.82, 1, sk)})`;
     // display: the post grows into the website's hero image
     const um = P(t, 7.12, 7.7, E.io);
     O(feedFeed, 1 - P(t, 7.1, 7.32, E.soft));
@@ -582,6 +588,9 @@ function render(t) {
     const tx = lerp(0, 84 - SQ.x * sc, um), ty = lerp(0, 410 - SQ.y * sc, um);
     mark6.setAttribute("transform", `translate(${tx},${ty}) scale(${sc})`);
     mark6.querySelector("#sqline").style.opacity = 1 - fill;
+    const ka = P(t, 17.35, 18.0, E.out);
+    O(markAlt, ka);
+    markAlt.style.transform = `translateY(${40 * (1 - ka)}px)`;
     const wu = P(t, 17.25, 17.95, E.out);
     wm6.style.clipPath = `inset(0 ${100 - 100 * wu}% 0 0)`;
     O(type6, P(t, 17.55, 18.1, E.soft));

@@ -9,7 +9,7 @@ ffmpeg -hide_banner -loglevel error -y \
   -i audio/build/mix.wav \
   -map 0:v -map 1:a \
   -vf "scale=1080:1920:flags=lanczos:out_color_matrix=bt709:out_range=tv,format=yuv420p" \
-  -c:v libx264 -preset slow -crf 15 -profile:v high -level 4.2 -tune film \
+  -c:v libx264 -preset slow -crf 17 -maxrate 18M -bufsize 36M -profile:v high -level 4.2 -tune film \
   -x264-params "keyint=60:min-keyint=30" \
   -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv \
   -c:a aac -b:a 256k -ar 48000 -ac 2 \

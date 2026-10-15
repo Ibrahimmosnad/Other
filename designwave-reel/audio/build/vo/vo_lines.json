@@ -1,0 +1,86 @@
+{
+  "voice": "af_heart",
+  "speed": 0.94,
+  "lines": [
+    {
+      "key": "l1",
+      "text": "A business is more than its logo.",
+      "phonemes": "ɐ bˈɪznəs ɪz mˈɔːɹ ðɐn ɪts lˈoʊɡoʊ.",
+      "seconds": 2.091,
+      "sr": 24000,
+      "gaps": [
+        [
+          0.735,
+          0.81
+        ]
+      ]
+    },
+    {
+      "key": "l2",
+      "text": "It's how its products are presented, how it communicates, and the experience people have when they interact with it.",
+      "phonemes": "ɪts hˌaʊ ɪts pɹˈɑːdʌkts ɑːɹ pɹɪzˈɛntᵻd, hˌaʊ ɪt kəmjˈuːnᵻkˌeɪts, ænd ðɪ ɛkspˈiəɹɪəns pˈiːpəl hæv wɛn ðeɪ ˌɪntɚɹˈækt wɪð ɪt.",
+      "seconds": 6.379,
+      "sr": 24000,
+      "gaps": [
+        [
+          1.66,
+          2.0
+        ],
+        [
+          3.155,
+          3.5
+        ]
+      ]
+    },
+    {
+      "key": "l3",
+      "text": "That's why good design shouldn't happen in isolation.",
+      "phonemes": "ðæts wˌaɪ ɡˈʊd dɪzˈaɪn ʃˌʊdənt hˈæpən ɪn ˌaɪsəlˈeɪʃən.",
+      "seconds": 2.795,
+      "sr": 24000,
+      "gaps": []
+    },
+    {
+      "key": "l4",
+      "text": "At Designwave, we start by understanding the business, then build a creative direction that connects its identity, digital presence, and visual communication.",
+      "phonemes": "æt dɪzˈaɪnweɪv, wiː stˈɑːɹt baɪ ˌʌndɚstˈændɪŋ ðə bˈɪznəs, ðˈɛn bˈɪld ɐ kɹiːˈeɪɾɪv dᵻɹˈɛkʃən ðæt kənˈɛkts ɪts aɪdˈɛntᵻɾi, dˈɪdʒɪɾəl pɹˈɛzəns, ænd vˈɪʒuːəl kəmjˌuːnɪkˈeɪʃən.",
+      "seconds": 9.771,
+      "sr": 24000,
+      "gaps": [
+        [
+          0.955,
+          1.13
+        ],
+        [
+          3.15,
+          3.665
+        ],
+        [
+          6.73,
+          7.06
+        ],
+        [
+          8.005,
+          8.09
+        ],
+        [
+          8.095,
+          8.285
+        ]
+      ]
+    },
+    {
+      "key": "l5",
+      "text": "Because every detail contributes to the bigger picture.",
+      "phonemes": "bɪkˈʌz ˈɛvɹi diːtˈeɪl kəntɹˈɪbjuːts tə ðə bˈɪɡɚ pˈɪktʃɚ.",
+      "seconds": 2.88,
+      "sr": 24000,
+      "gaps": [
+        [
+          0.305,
+          0.375
+        ]
+      ]
+    }
+  ]
+}

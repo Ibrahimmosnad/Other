@@ -1,5 +1,5 @@
 // Capture every frame of the film to out/frames/0000.png ... 0899.png.
-//   node tools/render-frames.mjs [workers] [--from N] [--to N]
+//   node tools/render-frames.mjs [workers] [--from N] [--to N] [--preview]
 import { createRequire } from "node:module";
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
@@ -26,7 +26,7 @@ async function worker(k) {
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   page.on("pageerror", (e) => console.log(`[w${k}] pageerror:`, e.message));
   page.on("console", (m) => m.type() === "error" && console.log(`[w${k}] console:`, m.text()));
-  await page.goto(`${url}/comp/index.html`);
+  await page.goto(`${url}/comp/index.html${args.includes("--preview") ? "?preview" : ""}`);
   await page.waitForFunction(() => window.ready === true, null, { timeout: 120000 });
   const stage = page.locator("#stage");
   for (let f = from + k; f <= to; f += workers) {

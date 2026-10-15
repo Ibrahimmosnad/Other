@@ -70,7 +70,11 @@ python audio/mix.py                  # effects, ducking, -14 LUFS / -1.5 dBTP
 # 3. picture and master
 node tools/render-frames.mjs 3       # 900 PNG frames
 tools/encode.sh                      # out/designwave-reel.mp4
+tools/qc.sh                          # spec check, loudness, contact sheet
 ```
+
+Delivered master: 1080 × 1920, 30 fps, 900 frames (30.000 s), H.264 High
+yuv420p BT.709, AAC stereo 48 kHz 256 kbps, −13.8 LUFS integrated, −1.6 dBTP.
 
 Review single moments with `node tools/frames.mjs <dir> 1.2 8.2 25.9 [--safe]`.
 `--safe` overlays Instagram's interface zones.

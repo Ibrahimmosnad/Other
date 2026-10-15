@@ -4,3 +4,7 @@ assets/renders/*.png
 audio/build/vo/*.wav
 __pycache__/
 *.pyc
+audio/build/music.wav
+audio/build/sfx.wav
+audio/build/mix_pre.wav
+assets/img/*_preview*
