@@ -12,14 +12,15 @@ Designwave logo closes on "Design with intention."
 Nothing in the film is stock or AI-generated imagery. The furniture, flat-lay
 and devices are modelled and rendered in Blender (Cycles). Every FORM & OAK
 touchpoint is a real HTML/CSS layout. The motion is a deterministic HTML
-composition captured frame by frame. Narration and music are synthesised
-locally.
+composition captured frame by frame. Narration and sound effects are
+synthesised locally; there is no music.
 
 ## Story and timing
 
 Cuts follow the recorded narration (`audio/build/vo_timeline.json`). Scene
-boundaries live in `comp/timeline.json` and are read by the film, the score
-and the sound effects.
+boundaries live in `comp/timeline.json` and are read by the film; each phrase
+of narration starts on its cut, and the sound-effect cues in `audio/mix.py`
+follow the same moves.
 
 | Time | Scene | On screen | Narration |
 |---|---|---|---|
@@ -32,7 +33,7 @@ and the sound effects.
 | 20.4–21.8 | Digital | Laptop and phone showing the site. Label *Digital presence* | "digital presence," |
 | 21.8–23.75 | Communication | Social posts over the printed pieces. Label *Visual communication* | "and visual communication." |
 | 23.75–26.9 | Bigger picture | Pull back from the chair to the full case-study board. *Every detail contributes to the bigger picture.* | "Because every detail contributes to the bigger picture." |
-| 26.9–30.0 | Reveal | Designwave logo, *Design with intention.* | Music resolves |
+| 26.9–30.0 | Reveal | Designwave logo, *Design with intention.* | A riser into a hit on the logo |
 
 ## Brand sources
 
@@ -63,18 +64,21 @@ npm install                          # fonts and kokoro-js voices
 tools/render_assets.sh               # product shots -> textures -> flat-lay, phone, desk
 /root/venvs/reel/bin/python tools/prep_images.py
 # 2. sound
-python audio/tts.py af_heart 0.94    # narration, one file per sentence
-python audio/vo_assemble.py          # pauses + vo_timeline.json
-python audio/score.py                # original score
-python audio/mix.py                  # effects, ducking, -14 LUFS / -1.5 dBTP
+python audio/tts.py am_fenrir 1.1    # narration, one file per phrase
+python audio/vo_assemble.py          # phrases on their cues + vo_timeline.json
+python audio/mix.py                  # effects, voice chain, -14 LUFS / -1.5 dBTP
 # 3. picture and master
 node tools/render-frames.mjs 3       # 900 PNG frames
 tools/encode.sh                      # out/designwave-reel.mp4
 tools/qc.sh                          # spec check, loudness, contact sheet
 ```
 
+After a sound-only change, `tools/remux.sh` puts the new `mix.wav` on the
+existing master without re-rendering the picture (the video stream is copied
+untouched).
+
 Delivered master: 1080 × 1920, 30 fps, 900 frames (30.000 s), H.264 High
-yuv420p BT.709, AAC stereo 48 kHz 256 kbps, −13.8 LUFS integrated, −1.6 dBTP.
+yuv420p BT.709, AAC stereo 48 kHz 256 kbps, −14.1 LUFS integrated, −2.0 dBTP.
 
 Review single moments with `node tools/frames.mjs <dir> 1.2 8.2 25.9 [--safe]`.
 `--safe` overlays Instagram's interface zones.
@@ -82,24 +86,31 @@ Review single moments with `node tools/frames.mjs <dir> 1.2 8.2 25.9 [--safe]`.
 ### Voice
 
 The narration is the approved script, word for word, synthesised with
-**Kokoro-82M** (Apache-2.0), voice `af_heart` at 0.94× speed. Clause pauses are
-set by hand in `audio/vo_assemble.py`. The model weights are not in the repo;
-`audio/tts.py` documents where they go. To use a human recording instead,
-replace `audio/build/vo.wav` (keeping the phrase times in `vo_timeline.json`,
-or updating them) and re-run `mix.py` and `encode.sh`.
+**Kokoro-82M** (Apache-2.0), male voice `am_fenrir` at 1.1× speed: a close,
+conversational read rather than a measured documentary narrator. Each phrase
+the picture cuts on is synthesised on its own and starts on its cue
+(`CUES` in `audio/vo_assemble.py`), so every line lands on its cut. In the
+mix the voice is cleaned below 85 Hz, lifted for presence and air, compressed
+firmly and peak-controlled. The model weights are not in the repo;
+`audio/tts.py` documents where they go. To try another voice, run
+`audio/tts.py <voice> <speed>` (for example `am_puck` or `am_michael`), then
+`vo_assemble.py`, `mix.py` and `tools/remux.sh`. To use a human recording
+instead, replace `audio/build/vo.wav` (keeping the phrase times in
+`vo_timeline.json`, or updating them) and re-run `mix.py` and `remux.sh`.
 
-### Music and sound
+### Sound
 
-`audio/score.py` writes an original piece in D major at 100 BPM. Chord changes
-fall on beats that line up with the scene changes, and the final D major chord
-lands on the end card. It uses a warm additive pad, sparse felt piano, a soft
-plucked pulse from 0:03 that fills out from 0:13, and a convolution reverb.
-The effects are four quiet moments: paper as the tag lands, a tap on the
-website button, a soft chime as the pieces align, and air rising into the
-reveal.
+No music: every visible move has its own synthesised effect, cued in
+`audio/mix.py` (`cue_sheet`) from the motion in `comp/film.js`. That means
+whooshes on the camera pull-backs, the push into the phone and the slides
+between boards; a paper slide and a soft landing as the tag reaches the table;
+a tap and a swipe on the phone; pops as labels, swatches and dots appear;
+pen and line sounds as the mark is constructed; a snap and a soft chime as the
+pieces align; and a riser into a sub hit with an airy shimmer on the
+Designwave logo. Effects dip 4 dB while a line is spoken.
 
 ## Licences
 
 Fonts: Inter Tight, Instrument Serif and Jost, all SIL Open Font Licence, via
-`@fontsource`. Voice model: Kokoro-82M, Apache-2.0. Score, sound effects, 3D
-models and all designs were made for this project.
+`@fontsource`. Voice model: Kokoro-82M, Apache-2.0. Sound effects, 3D models
+and all designs were made for this project.
