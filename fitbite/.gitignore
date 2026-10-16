@@ -1,0 +1,5 @@
+node_modules/
+fonts/
+__pycache__/
+qa/
+build/document.html

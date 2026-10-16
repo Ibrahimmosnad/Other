@@ -1,0 +1,22 @@
+{
+  "name": "fitbite-marketing",
+  "version": "1.0.0",
+  "description": "FitBite Healthy Snack: logo, executive deck and marketing strategy document",
+  "scripts": {
+    "fonts": "bash tools/fetch_fonts.sh",
+    "logo": "python3 build/logo.py && node tools/rasterize.mjs 4",
+    "deck": "node build/deck.js",
+    "document": "node build/document.js",
+    "build": "npm run logo && npm run deck && npm run document"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pptxgenjs": "^4.0.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-icons": "^5.7.0",
+    "sharp": "^0.35.5"
+  },
+  "private": true
+}

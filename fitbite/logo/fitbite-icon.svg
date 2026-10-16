@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="FitBite icon">
+  <title>FitBite icon</title>
+  <defs>
+    <mask id="icon-bite" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240">
+      <rect width="240" height="240" fill="#fff"/>
+      <circle cx="203.1" cy="105.1" r="25" fill="#000"/><circle cx="182.3" cy="69.1" r="27" fill="#000"/><circle cx="148.7" cy="44.6" r="24" fill="#000"/>
+    </mask>
+  </defs>
+  <g mask="url(#icon-bite)">
+    <circle cx="108" cy="136" r="96" fill="#FF7A1A"/>
+    <circle cx="84" cy="128" r="6" fill="#E5620B"/><circle cx="130" cy="120" r="5" fill="#E5620B"/><circle cx="128" cy="182" r="6" fill="#E5620B"/><circle cx="66" cy="180" r="5" fill="#E5620B"/><circle cx="162" cy="160" r="5" fill="#E5620B"/><circle cx="100" cy="220" r="4" fill="#E5620B"/><circle cx="44" cy="132" r="4" fill="#E5620B"/>
+    <ellipse cx="70" cy="102" rx="8.5" ry="4.8" transform="rotate(-30 70 102)" fill="#FFE3BF"/><ellipse cx="112" cy="92" rx="8.5" ry="4.8" transform="rotate(20 112 92)" fill="#FFE3BF"/><ellipse cx="52" cy="158" rx="8.5" ry="4.8" transform="rotate(15 52 158)" fill="#FFE3BF"/><ellipse cx="102" cy="152" rx="8.5" ry="4.8" transform="rotate(-45 102 152)" fill="#FFE3BF"/><ellipse cx="150" cy="132" rx="8.5" ry="4.8" transform="rotate(70 150 132)" fill="#FFE3BF"/><ellipse cx="88" cy="196" rx="8.5" ry="4.8" transform="rotate(-10 88 196)" fill="#FFE3BF"/><ellipse cx="150" cy="198" rx="8.5" ry="4.8" transform="rotate(40 150 198)" fill="#FFE3BF"/>
+  </g>
+  <line x1="215.7" y1="105.1" x2="233.0" y2="100.2" stroke="#3DBE6E" stroke-width="11" stroke-linecap="round"/><line x1="191.2" y1="61.1" x2="204.6" y2="49.0" stroke="#3DBE6E" stroke-width="11" stroke-linecap="round"/><line x1="150.0" y1="32.2" x2="156.7" y2="15.5" stroke="#3DBE6E" stroke-width="11" stroke-linecap="round"/>
+</svg>
